@@ -16,6 +16,8 @@ const DEFAULT_FORMATS = {
   "zh-CN": "YYYY年M月D日", // 2024年1月15日,
   ru: "D MMMM YYYY", // 15 января 2024,
   pt: "D MMMM YYYY", // 15 de janeiro de 2024,
+  hi: "D MMMM YYYY",
+  kn: "D MMMM YYYY",
 } as const;
 
 
@@ -29,6 +31,8 @@ const SHORT_FORMATS = {
   "zh-CN": "YYYY年M月", // 2024年1月
   ru: "MMM YYYY", // янв 2024
   pt: "MMM YYYY", // jan 2024
+  hi: "MMM YYYY",
+  kn: "MMM YYYY",
 } as const;
 
 

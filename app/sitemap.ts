@@ -7,7 +7,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date().toISOString();
 
   // Static routes with locale support
-  const locales = ["fr", "en", "es", "pt", "ru", "zh-CN"];
+  const locales = ["fr", "en", "es", "pt", "ru", "zh-CN", "hi", "kn"];
 
   const staticRoutes = [
     // Home page (root)

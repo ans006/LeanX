@@ -108,12 +108,30 @@ export const LocalizedMetadata = {
     category: "健身",
     classification: "健身与健康",
   },
+  hi: {
+    title: "LeanX",
+    description: "आधुनिक फिटनेस कोचिंग प्लेटफ़ॉर्म जिसमें व्यायाम का व्यापक डेटाबेस है",
+    keywords: ["fitness", "workout", "exercise", "training", "muscle", "strength"],
+    ogAlt: "LeanX - Modern fitness platform",
+    applicationName: "LeanX",
+    category: "fitness",
+    classification: "Fitness & Health",
+  },
+  kn: {
+    title: "LeanX",
+    description: "Modern fitness coaching platform with comprehensive exercise database",
+    keywords: ["fitness", "workout", "exercise", "training"],
+    ogAlt: "LeanX - Modern fitness platform",
+    applicationName: "LeanX",
+    category: "fitness",
+    classification: "Fitness & Health",
+  },
 } as const;
 
 export type SupportedLocale = keyof typeof LocalizedMetadata;
 
 export function getLocalizedMetadata(locale: string) {
-  const supportedLocales: SupportedLocale[] = ["en", "fr", "es", "pt", "ru", "zh-CN"];
+  const supportedLocales: SupportedLocale[] = ["en", "fr", "es", "pt", "ru", "zh-CN", "hi", "kn"];
 
   if (supportedLocales.includes(locale as SupportedLocale)) {
     return LocalizedMetadata[locale as SupportedLocale];

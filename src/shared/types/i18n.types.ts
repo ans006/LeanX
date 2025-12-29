@@ -13,6 +13,10 @@ export type I18nField<T extends string> = {
   [K in T as `${K}Ru`]: string;
 } & {
   [K in T as `${K}ZhCn`]: string;
+} & {
+  [K in T as `${K}Hi`]: string;
+} & {
+  [K in T as `${K}Kn`]: string;
 };
 
 // Common i18n fields used across entities
@@ -33,10 +37,14 @@ export type ExtractLocaleField<T extends Record<string, any>, Field extends keyo
           ? T[`${string & Field}Ru`]
           : L extends "zh-CN"
             ? T[`${string & Field}ZhCn`]
-            : never;
+            : L extends "hi"
+              ? T[`${string & Field}Hi`]
+              : L extends "kn"
+                ? T[`${string & Field}Kn`]
+                : never;
 
 // Helper to get field suffix for a locale
-export function getLocaleSuffix(locale: Locale): "En" | "Es" | "Pt" | "Ru" | "ZhCn" | "" {
+export function getLocaleSuffix(locale: Locale): "En" | "Es" | "Pt" | "Ru" | "ZhCn" | "Hi" | "Kn" | "" {
   switch (locale) {
     case "en":
       return "En";
@@ -48,6 +56,10 @@ export function getLocaleSuffix(locale: Locale): "En" | "Es" | "Pt" | "Ru" | "Zh
       return "Ru";
     case "zh-CN":
       return "ZhCn";
+    case "hi":
+      return "Hi";
+    case "kn":
+      return "Kn";
     default:
       return "";
   }
